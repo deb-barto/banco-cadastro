@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cadastro de Dados</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="organize" style="margin:100px;">
+
+            <div class="description">
+                <h1>Banco de Cadastro</h1>
+                <h3>Sistema de gestão de dados para cadastrar clientes e produtos.
+                Clique no botão abaixo que respresente a categoria que você quer registrar.</h3>
+            </div>
+            <div class="home">
+                <div class="client" style="padding: 25px;">
+                    <button id="cliente" type="button" class="botaocadastro" data-toggle="modal" data-target="#modalCliente">CLIENTE</button>
+                </div>
+                <div class= "produto" style="padding: 25px;">
+                    <button id="produto" type="button" class="botaocadastro" data-toggle="modal" data-target="#modalProduto"> PRODUTO</button>
+                </div>
+            </div>
+    
+        </div>
+        <img src="/container.svg">
+        <script src='script.js' async defer></script>
+    </body>
+
+        <!-- Formulário Cadastrar Cliente -->
+        <div class="modal fade" id="modalCliente">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title font-modal">Cadastro de Cliente</h4>
+                        <button type="button" class="close " data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formCliente" onsubmit="cadastrarCliente()" action="#">
+                            <div class="row">
+                                <label for="endereco" class="form-group ml-3">Dados do cliente: </label>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="nome-cliente" placeholder="Nome">
+                                </div>
+                                <div class="col">
+                                    <input type="email" class="form-control mb-2 mr-sm-2" id="email" placeholder="E-mail">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="tel" class="form-control mb-2 mr-sm-2" id="celular" placeholder="Celular">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="cpf" placeholder="CPF">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="endereco" class="form-group ml-3"><br>Dados do endereço do cliente: </label>
+                            </div>
+                            <div class="row">
+                                <div class="col"><input type="text" class="form-control mb-2 mr-sm-2" id="end-rua" placeholder="Endereço"></div>
+                            </div>    
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="end-numero" placeholder="Número">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="end-comp" placeholder="Complemento">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="end-bairro" placeholder="Bairro">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="end-cep" placeholder="CEP">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="end-cidade" placeholder="Cidade">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="end-estado" placeholder="Estado">
+                                </div>
+                            </div>
+                                <input type="submit" class="btn btn-outline-success float-right mt-2" value="Confirmar dados">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Formulário Cadastrar Produto -->
+        <div class="modal fade" id="modalProduto">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title font-modal">Cadastro de Produto</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formProduto" onsubmit="cadastrarProduto()" action="#">
+                            <div class="row">
+                                <label for="endereco" class="form-group ml-3">Dados do produto: </label>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="nome-prod" placeholder="Nome do produto">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="codigo" placeholder="Código">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="tel" class="form-control mb-2 mr-sm-2" id="nserie" placeholder="Número de Série">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="custo" placeholder="Custo unitário">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="precovenda" placeholder="Preço de Venda">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="fornecedor" placeholder="Fornecedor">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="qntd" placeholder="Quantidade">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="categoria" placeholder="Categoria">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <textarea class="form-control mb-2 mr-sm-2" rows= 3 id="desc" placeholder="Descrição"></textarea>
+                                </div>
+                            </div>
+                                <input type="submit" class="btn btn-outline-success float-right mt-2" value="Confirmar dados">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</html>
